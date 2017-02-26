@@ -1,4 +1,13 @@
-function fn(arg1,arg2,arg3){
-    console.log(fn.length);
+function sum(num1, num2) {
+    return num1 + num2;
 }
-fn();
+
+function callSum1(num1,num2) {
+    return sum.apply(this,arguments);
+}
+
+function callSum2(num1, num2) {
+    return sum.apply(this,[num1, num2]);
+}
+callSum1(1,2);
+callSum2(1,2);
